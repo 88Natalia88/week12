@@ -1,3 +1,12 @@
+function capitalizeItUp(item){
+  let nameClient = document.getElementById('name').value;
+  nameClient = item. charAt(0).toUpperCase();
+  return nameClient + item.slice(1);
+}
+let newName = nameClient.map(capitalizeItUp);
+
+console.log(newName);
+
 
 function clickMe(){
     event.preventDefault();
