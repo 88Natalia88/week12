@@ -1,17 +1,16 @@
-/*function capitalize(input) {
-    input.value = input.value.replace(/( |^)[а-яёa-z]/g, function(u){ return u.toUpperCase(); }  );
-  }
-  
-  document.getElementById('name').addEventListener('input', function(){
-    capitalize(this);
-  });*/
-  
+
 function clickMe(){
     event.preventDefault();
     let nameClient = document.getElementById('name').value;
     let avatar = document.getElementById('avatar').value;
     let comment = document.getElementById('comment').value;
 
+    let spams = ["viagra", "XXX"];
+    for( let i = 0; i < spams.length; i++ ) {
+      while (comment.indexOf(spams[i]) != -1){
+      comment = comment.replace(spams[i], '***');
+      }
+    }
 
     document.querySelector('.chat-name').innerHTML = nameClient;
     document.querySelector('#img').src = avatar;
@@ -24,8 +23,8 @@ function clickMe(){
     chat.append(line);
     
 
-
     console.log(nameClient);
     console.log(avatar);
     console.log(comment);
 }
+
