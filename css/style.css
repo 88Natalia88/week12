@@ -23,7 +23,7 @@ h2{
 }
 #name, #avatar, #comment{
     background-color: transparent;
-    border: 2px solid lightblue;
+    border: 2px dashed lightblue;
     color: white;
     width: 500px;
 }
@@ -32,4 +32,8 @@ h2{
 }
 img{
     width: 50%;
+}
+hr{
+    size: 2px;
+    color: lightblue;
 }
