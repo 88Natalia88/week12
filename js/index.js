@@ -28,12 +28,10 @@ function clickMe(){
 
 
 //задание под звездочкой
-let str = `Hello!<br>Welcome to the study JavaScript!<hr><p>Some more content here</p><img src="">`
+let str = 'Hello!<br>Welcome to the study JavaScript!<hr><p>Some more content here</p><img src="">';
 function deleteTags(str) {
-  let regex = /( |<([^>]+)>)/ig,
-      result = str.replace(regex, "");
-      return result;
+    let regex = /( |<([^>]+)>)/ig,
+    result = str.replace(regex, "");
+    return result;
 }
 console.log(deleteTags(str));
-
-
