@@ -1,39 +1,28 @@
-function capitalizeItUp(item){
-  let nameClient = document.getElementById('name').value;
-  nameClient = item. charAt(0).toUpperCase();
-  return nameClient + item.slice(1);
-}
-let newName = nameClient.map(capitalizeItUp);
-
-console.log(newName);
-
 
 function clickMe(){
     event.preventDefault();
     let nameClient = document.getElementById('name').value;
+    let nameClient1 = nameClient.trim(nameClient);
+    let nameString = nameClient1.toLowerCase();
+    let firstCharacter = nameString[0];
+    let firstCharacterUpp = firstCharacter.toUpperCase();
+    let allText = nameString.slice(1);
+    let nameClientNew = firstCharacterUpp + allText;
+
     let avatar = document.getElementById('avatar').value;
     let comment = document.getElementById('comment').value;
+    let commentNew = comment.replace(/viagra|XXX/gi, "***");
 
-    let spams = ["viagra", "XXX"];
-    for( let i = 0; i < spams.length; i++ ) {
-      while (comment.indexOf(spams[i]) != -1){
-      comment = comment.replace(spams[i], '***');
-      }
-    }
-
-    document.querySelector('.chat-name').innerHTML = nameClient;
+    document.querySelector('.chat-name').innerHTML = nameClientNew;
     document.querySelector('#img').src = avatar;
-    document.querySelector('.chat-text').innerHTML = comment;
+    document.querySelector('.chat-text').innerHTML = commentNew;
     
 
     let chat = document.querySelector('.chat');
-    let line = document.createElement('hr');
-    line.innerHTML = `<hr>`;
-    chat.append(line);
-    
-
-    console.log(nameClient);
+    chat.style.cssText = "border-bottom: 2px dashed lightblue";
+  
+    console.log(nameClientNew);
     console.log(avatar);
-    console.log(comment);
+    console.log(commentNew);
 }
 
