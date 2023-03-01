@@ -13,12 +13,15 @@ function clickMe(){
     let comment = document.getElementById('comment').value;
     let commentNew = comment.replace(/viagra|XXX/gi, "***");
 
+    let now = new Date();
+
+
     document.querySelector('.chat-name').innerHTML = nameClientNew;
     document.querySelector('#img').src = avatar;
     document.querySelector('.chat-text').innerHTML = commentNew;
-    
+    document.querySelector('.time').innerHTML = now;
 
-    let chat = document.querySelector('.chat');
+    let chat = document.querySelector('.chatAll');
     chat.style.cssText = "border-bottom: 2px dashed lightblue";
   
     console.log(nameClientNew);

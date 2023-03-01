@@ -14,6 +14,9 @@
     <div class="comments">
 <form>
 <h2>Оставьте ваш комментарий</h2>
+<label for="yesName">Показывать ваше имя?
+<input type="checkbox" name="yesName" id="yesName" value="yes">Yes
+<input type="checkbox" name="yesName" id="noName" value="no"> No </label> <br>
 <label for="name">Введите ваше ФИО:</label><br>
 <input type="text" name="name" id="name"><br>
 <laber for="avatar">Введите ссылку вашего аватара:</laber><br>
@@ -25,10 +28,17 @@
     </div>
     <div class="chat">
         <h2>Чат</h2>
-        <p class="chat-name"></p>
+        <div class="chatAll">
+        <div>
         <img src="" id="img"> 
-        <p class="chat-text"></p>
-    </div></div>
+        <p class="chat-text"></p></div>
+        <div>
+        <p class="chat-name"></p></div>
+        <div class="time"></div>
+    </div>
+    </div>
+    
+</div>
    </div>
     
 

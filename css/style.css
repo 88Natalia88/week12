@@ -9,6 +9,7 @@ h1{
 .service-comments{
     display: flex;
     margin: 30px;
+    
 }
 .chat{
     margin-left: 160px;
@@ -32,4 +33,10 @@ h2{
 }
 img{
     width: 50%;
+}
+.time{
+    color: lightblue;
+}
+.chatAll{
+    display: flex;
 }
