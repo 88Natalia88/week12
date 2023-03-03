@@ -30,9 +30,10 @@ h2{
 }
 .chat-text, .chat-name{
     color: white;
+    padding: 20px;
 }
 img{
-    width: 50%;
+    width: 200px;
 }
 .time{
     color: lightblue;

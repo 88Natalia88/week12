@@ -17,7 +17,7 @@ function clickMe(){
     let allText = nameString.slice(1);
     let nameClientNew = firstCharacterUpp + allText;
   
-    if (client.value === " "){
+    if (document.getElementById('name').value === " "){
         nameClientNew.textContent = "username";
         document.querySelector('.chat-name').innerHTML = nameClientNew;
     }
@@ -25,7 +25,7 @@ function clickMe(){
     if (yesName.checked){
         document.querySelector('.chat-name').innerHTML = nameClientNew;
     } 
-    if (noName.checked){
+    else {
         nameClientNew = nameClientNew.replace(nameClientNew, "***");
         document.querySelector('.chat-name').innerHTML = nameClientNew;
     } 
@@ -34,15 +34,22 @@ console.log(nameClientNew);
 
 //задание с аватаром
     let avatarPhoto = avatar.value;
-
-
+    if(document.getElementById('avatar').value == ""){
+let imgs = ['img/flower.jpg', 
+'img/horizon.jpeg',
+'img/man.jpeg',
+'img/stone.jpg',
+'img/woman.jpg',
+'img/silhouette.jpg'];
+document.querySelector('#img').src = imgs[Math.floor(Math.random()*imgs.length)];
+} else {
+    document.querySelector('#img').src = avatarPhoto;
+}
 
 //задание со спамом
     let comment1= comment.value;
     let commentNew = comment1.replace(/viagra|XXX/gi, "***");
     
-    rand_photo();
-    document.querySelector('#img').src = avatarPhoto;
     document.querySelector('.chat-text').innerHTML = commentNew;
     document.querySelector('.time').innerHTML = now;
 //черта после добавления комментария
@@ -60,14 +67,3 @@ function deleteTags(str) {
     return result;
 }
 //console.log(deleteTags(str));
-function rand_photo(){
-  document.getElementById('avatar').value = "";
-switch(Math.random() * 6|0){
-    case 0: document.querySelector('#img').src = "img/flower.jpg"; break;
-    case 1: document.querySelector('#img').src = "img/horizon.jpeg"; break;
-    case 2: document.querySelector('#img').src = "img/man.jpeg"; break;
-    case 3: document.querySelector('#img').src = "img/stone.jpg"; break;
-    case 4: document.querySelector('#img').src = "img/woman.jpg"; break;
-    case 5: document.querySelector('#img').src = "img/silhouette.jpg"; break;
-}
-}
