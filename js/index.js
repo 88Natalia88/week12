@@ -1,10 +1,15 @@
-
-
+const client = document.getElementById('name');
+const avatar = document.getElementById('avatar');
+const comment = document.getElementById('comment');
+let now = new Date();
+const chat = document.querySelector('.chatAll');
+const yesName = document.querySelector('#yesName');
+const noName = document.querySelector('#noName');
 
 function clickMe(){
     event.preventDefault();
 //задание с именем пользователя
-    let nameClient = document.getElementById('name').value;
+    let nameClient = client.value;
     let nameClient1 = nameClient.trim(nameClient);
     let nameString = nameClient1.toLowerCase();
     let firstCharacter = nameString[0];
@@ -13,9 +18,6 @@ function clickMe(){
     let nameClientNew = firstCharacterUpp + allText;
 
 //задание с чекбоксом
-    const yesName = document.querySelector('#yesName');
-    const noName = document.querySelector('#noName');
-
     if (yesName.checked){
         document.querySelector('.chat-name').innerHTML = nameClientNew;
     } 
@@ -26,27 +28,20 @@ function clickMe(){
 
 
 //задание с аватаром
-    const avatar = document.getElementById('avatar').value;
+    let avatarPhoto = avatar.value;
     switch(Math.random() * 6|0){
         case 0: 
     }
 //задание со спамом
-    const comment = document.getElementById('comment').value;
-    let commentNew = comment.replace(/viagra|XXX/gi, "***");
-//задание с датой
-    let now = new Date();
+    let comment1= comment.value;
+    let commentNew = comment1.replace(/viagra|XXX/gi, "***");
+    
 
-
-    document.querySelector('#img').src = avatar;
+    document.querySelector('#img').src = avatarPhoto;
     document.querySelector('.chat-text').innerHTML = commentNew;
     document.querySelector('.time').innerHTML = now;
 //черта после добавления комментария
-    let chat = document.querySelector('.chatAll');
     chat.style.cssText = "border-bottom: 2px dashed lightblue";
-  
-    console.log(nameClientNew);
-    console.log(avatar);
-    console.log(commentNew);
 }
 
 //задание под звездочкой week 13
