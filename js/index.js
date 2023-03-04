@@ -16,12 +16,10 @@ function clickMe(){
     let firstCharacterUpp = firstCharacter.toUpperCase();
     let allText = nameString.slice(1);
     let nameClientNew = firstCharacterUpp + allText;
-  
-    if (document.getElementById('name').value === " "){
-        nameClientNew.textContent = "username";
-        document.querySelector('.chat-name').innerHTML = nameClientNew;
-    }
-//задание с чекбоксом
+  //пустое поле = username
+  if (yesName.checked && document.getElementById('name').value === " "){
+    document.querySelector('.chat-name').innerHTML = "username";
+} else                    //задание с чекбоксом
     if (yesName.checked){
         document.querySelector('.chat-name').innerHTML = nameClientNew;
     } 
