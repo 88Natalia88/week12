@@ -8,17 +8,25 @@ const noName = document.querySelector('#noName');
 
 function clickMe(){
     event.preventDefault();
+
 //задание с именем пользователя
     let nameClient = client.value;
     let nameClient1 = nameClient.trim(nameClient);
-    let nameString = nameClient1.toLowerCase();
+
+    //каждое слово с заглавной буквы через пробел
+    let nameClientNew = nameClient1.replace(/(^|\s)\S/g, function(a) {return a.toUpperCase()});
+    
+    //первая буква заглавная, остальные маленькие
+    /*let nameString = nameClient1.toLowerCase();
     let firstCharacter = nameString[0];
     let firstCharacterUpp = firstCharacter.toUpperCase();
     let allText = nameString.slice(1);
-    let nameClientNew = firstCharacterUpp + allText;
+    let nameClientNew = firstCharacterUpp + allText;*/
+
   //пустое поле = username
   if (yesName.checked && document.getElementById('name').value === " "){
-    document.querySelector('.chat-name').innerHTML = "username";
+    nameClientNew.textContent = "username";
+    document.querySelector('.chat-name').innerHTML = nameClientNew;
 } else                    //задание с чекбоксом
     if (yesName.checked){
         document.querySelector('.chat-name').innerHTML = nameClientNew;
@@ -61,7 +69,7 @@ document.querySelector('#img').src = imgs[Math.floor(Math.random()*imgs.length)]
 let str = 'Hello!<br>Welcome to the study JavaScript!<hr><p>Some more content here</p><img src="">';
 function deleteTags(str) {
     let regex = /( |<([^>]+)>)/ig,
-    result = str.replace(regex, "");
+    result = str.replace(regex, " ");
     return result;
 }
 //console.log(deleteTags(str));
