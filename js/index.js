@@ -14,7 +14,8 @@ function clickMe(){
     let nameClient1 = nameClient.trim(nameClient);
 
     //каждое слово с заглавной буквы через пробел
-    let nameClientNew = nameClient1.replace(/(^|\s)\S/g, function(a) {return a.toUpperCase()});
+    let nameClientNew = nameClient1.replace(/(^|\s)\S/g, function(a) {
+        return a.toUpperCase()});
     
     //первая буква заглавная, остальные маленькие
     /*let nameString = nameClient1.toLowerCase();
@@ -24,9 +25,8 @@ function clickMe(){
     let nameClientNew = firstCharacterUpp + allText;*/
 
   //пустое поле = username
-  if (yesName.checked && document.getElementById('name').value === " "){
-    nameClientNew.textContent = "username";
-    document.querySelector('.chat-name').innerHTML = nameClientNew;
+  if (yesName.checked && document.getElementById('name').value == ""){
+    document.querySelector('.chat-name').textContent = "username";
 } else                    //задание с чекбоксом
     if (yesName.checked){
         document.querySelector('.chat-name').innerHTML = nameClientNew;
@@ -57,7 +57,7 @@ document.querySelector('#img').src = imgs[Math.floor(Math.random()*imgs.length)]
     let commentNew = comment1.replace(/viagra|XXX/gi, "***");
     
     document.querySelector('.chat-text').innerHTML = commentNew;
-    document.querySelector('.time').innerHTML = now;
+    document.querySelector('.time').innerHTML = now.toUTCString();
 //черта после добавления комментария
     chat.style.cssText = "border-bottom: 2px dashed lightblue";
 }
