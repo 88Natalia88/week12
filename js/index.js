@@ -65,19 +65,21 @@ document.querySelector('#img').src = imgs[Math.floor(Math.random()*imgs.length)]
 //задание под звездочкой week 13
 const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда',
  'Четверг', 'Пятница', 'Суббота'];
-
-function formatDate(date = new Date) {
+let date = new Date(2023, 02, 04, 22, 59);
+//console.log(date);
+function formatDate() {
+    let now = new Date();
     let Y = date.getFullYear();
     let M = date.getMonth() + 1;
     let D = date.getDate();
     let d = days[date.getDay()];
     let h = date.getHours();
     let m = date.getMinutes();
-    let diffMs = new Date() - date;
+    let diffMs = now - date;
     let diffSec = Math.round(diffMs / 1000);
     let diffMin = diffSec / 60;
     let diffHour = diffMin / 60;
-  
+    //console.log(Y, M, D, d, h, m);
     // форматирование
     Y = Y.toString().slice(-2);
     M = M < 10 ? '0' + M : M;
