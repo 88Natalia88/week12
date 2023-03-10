@@ -6,6 +6,15 @@ const chat = document.querySelector('.chatAll');
 const yesName = document.querySelector('#yesName');
 const noName = document.querySelector('#noName');
 
+//Заглавная буква сразу при вводе данных
+/*function capitalize(client){
+client.value = client.value.replace(/(^|\s)\S/g, function(a) {
+        return a.toUpperCase()});
+}
+    document.getElementById('name').addEventListener('input', function(){
+    capitalize(this);
+    });*/
+
 function clickMe(){
     event.preventDefault();
 
